@@ -1,26 +1,16 @@
 <template>
-  <div id="app">
-    <h1>OAuth 2.0 授權</h1>
-    <button @click="startOAuth">Google 授權</button>
+  <div>
+    <button @click="startOAuth">前往Google 授權頁面</button>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 // 按鈕點擊後，請求 OAuth API
 const startOAuth = async () => {
-  try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/api/auth/login')
-    const data = await response.json()
-
-    if (data.url) {
-      window.location.href = data.url // 跳轉到 Google 授權畫面
-    } else {
-      alert('無法獲取授權網址')
-    }
-  } catch (error) {
-    console.error('請求 OAuth 失敗:', error)
-    alert('發生錯誤，請稍後再試')
-  }
+  router.push('/auth/access')
 }
 </script>
 

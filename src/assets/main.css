@@ -27,9 +27,11 @@ a,
     place-items: center;
   }
 
-  #app {
+  #main {
     display: grid;
+    gap: 14px;
     grid-template-columns: 1fr 1fr;
+
     padding: 0 2rem;
   }
 }
