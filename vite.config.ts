@@ -7,6 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
+  base: '/',
   server: {
     port: 5174, // ✅ 指定 Vite 開發伺服器的端口號
     strictPort: true, // ✅ 如果 5174 被占用，不要隨機選擇其他端口
